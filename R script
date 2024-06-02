@@ -1,0 +1,39 @@
+
+setwd("C:/Users/ehtis/OneDrive - New Mexico State University/SUNNY/Research Projects/Mechanical Harvest Paper/Phenotype manuscript/PCA")
+#import data set, adjusted means
+data <- read.csv("mydata.csv")
+library(circlize)
+library(dendextend)
+library(dplyr)
+
+head(data)
+str(data)
+summary(data)
+options(max.print = 99999)
+print(data)
+
+# Compute distance matrix and hierarchical clustering
+dd <- dist(scale(data[, -1]), method = "euclidean")
+hc <- hclust(dd, method = "ward.D2")
+dend <- as.dendrogram(hc)
+# Define the number of clusters
+num_clades <- 4
+# Color branches and labels based on clusters
+dend <- dend %>%
+  color_branches(k = num_clades, col = c("firebrick4", "forestgreen", "black", "blue")) %>%
+  color_labels(k = num_clades, col = c("firebrick4", "forestgreen", "black", "blue")) %>%
+  set("branches_lwd", 2)
+
+# Add genotype names to the labels
+labels(dend) <- data$Treatment[order.dendrogram(dend)]
+# Plot circular dendrogram
+circlize_dendrogram(dend, dend_track_height = 0.7)
+
+# Cut the dendrogram into clusters
+clusters <- cutree(hc, k = num_clades)
+# Add the cluster information to the original data frame
+data$Cluster <- clusters
+# Print the updated data frame
+print(data)
+write.csv(data, file = "data_cluster.csv", row.names = FALSE)
+
