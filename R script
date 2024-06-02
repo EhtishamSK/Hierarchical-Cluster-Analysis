@@ -29,6 +29,16 @@ labels(dend) <- data$Treatment[order.dendrogram(dend)]
 # Plot circular dendrogram
 circlize_dendrogram(dend, dend_track_height = 0.7)
 
+#Get cluster means for all traits 
+cluster_means <- data %>%
+  group_by(Cluster) %>%
+  summarise(across(c("PHT", "PWDT", "HTFPB", "DTFN", "NBB", "DSRG", "DSRR",
+                     "DSFG", "DSFR", "PER", "ARA", "WMH", "MAXW", "HMW",
+                     "MAXH", "CURH", "TLY", "RED", "GRN", "PODWT"), mean, na.rm = TRUE))
+# Print the mean values for each cluster
+print(cluster_means)
+write.csv(cluster_means, file = "cluster_means.csv", row.names = FALSE)
+
 # Cut the dendrogram into clusters
 clusters <- cutree(hc, k = num_clades)
 # Add the cluster information to the original data frame
@@ -36,4 +46,3 @@ data$Cluster <- clusters
 # Print the updated data frame
 print(data)
 write.csv(data, file = "data_cluster.csv", row.names = FALSE)
-
