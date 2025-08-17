@@ -1,3 +1,14 @@
+###########################################################################
+# Title       : Hierarchical Clustering and Circular Dendrogram 
+# Author      : Ehtisham Khokhar
+# University  : New Mexico State University
+# Email       : ehtishamshakeel@gmail.com 
+# Date        : 2025
+# Purpose     : Perform hierarchical clustering of genotype trait data, 
+#               visualize clusters with circular dendrograms, calculate 
+#               Within-Cluster Sum of Squares (WCSS), R² values, and cluster means.
+###########################################################################
+
 # Set working directory to the path where data and output files will be stored
 setwd("C:/Users/ehtis/OneDrive - New Mexico State University/SUNNY/Research Projects/Mechanical Harvest Paper/Phenotype manuscript/single location/PCA")
 
@@ -47,7 +58,6 @@ plot(1:10, wcss_values, type = "b", pch = 19, col = "red", lwd = 3, frame = FALS
 
 # Add grid lines to the plot
 grid()
-
 
 # Define number of clusters and colors
 num_clades <- 8
@@ -116,4 +126,3 @@ plot(1:10, r_squared_values, type = "b", pch = 19, frame = FALSE,
 # Save R² values to CSV for record-keeping
 r_squared_df <- data.frame(Num_Clusters = 1:10, R_Squared = r_squared_values)
 write.csv(r_squared_df, file = "r_squared_values.csv", row.names = FALSE)
-
