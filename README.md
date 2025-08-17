@@ -52,7 +52,7 @@ The script produces:
 ## Example Plot
 
 The hierarchical clustering and circular dendrogram output is saved as `HCA` in the repository.  
-![Hierarchical Clustering Dendrogram](HCA.png)
+![Hierarchical Clustering Dendrogram](HCA.jpg)
 
 ---
 
@@ -61,9 +61,3 @@ The hierarchical clustering and circular dendrogram output is saved as `HCA` in 
 **Ehtisham Khokhar**  
 New Mexico State University  
 Email: ehtisham@gmail.com 
-
----
-
-## Short Description (for GitHub)
-
-R script for hierarchical clustering of genotype traits with circular dendrograms, cluster summaries, and R² evaluation.
