@@ -61,4 +61,4 @@ The hierarchical clustering and circular dendrogram output is saved as `HCA.JPG`
 
 **Ehtisham Khokhar**  
 New Mexico State University  
-Email: ehtisham@gmail.com 
+Email: ehtishamshakeel@gmail.com 
