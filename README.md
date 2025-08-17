@@ -51,7 +51,7 @@ The script produces:
 
 ## Example Plot
 
-The hierarchical clustering and circular dendrogram output is saved as `HCA.png` in the repository.  
+The hierarchical clustering and circular dendrogram output is saved as `HCA.jpg` in the repository.  
 ![Hierarchical Clustering Dendrogram](HCA.png)
 
 ---
@@ -60,7 +60,7 @@ The hierarchical clustering and circular dendrogram output is saved as `HCA.png`
 
 **Ehtisham Khokhar**  
 New Mexico State University  
-Email: ehtisham.nmsu@example.com
+Email: ehtisham@gmail.com 
 
 ---
 
